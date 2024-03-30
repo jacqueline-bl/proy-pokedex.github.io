@@ -11,13 +11,17 @@ function crearCarta(pokemon){
     <img src="${pokemon.image}" alt="${pokemon.name}">
     <h3>${pokemon.name}</h3>
     <ul>
-      <li>Altura: ${pokemon.height}</li>
-      <li>Peso: ${pokemon.weight}</li>
-      <li>ID: ${pokemon.id}</li>
+      <li>Altura:  ${pokemon.height}</li>
+      <li>Peso:  ${pokemon.weight}</li>
+      <li>ID:  ${pokemon.id}</li> 
     </ul>
-    `
+    `;
     document.getElementById('render').appendChild(article);
 }
+
+//AGREGAR TIPO (FALTA)
+/*<li>ID:  ${pokemon.type}</li> 
+type : pokemon.type.type.name*/
 
 // IMPRIMIR DATOS POR CADA POKEMÓN 
 
@@ -29,7 +33,7 @@ async function obtenerPokemon(nombre){
         height: pokemon.height,
         id: pokemon.id,
         weight: pokemon.weight,
-        image: pokemon.sprites.front_default
+        image: pokemon.sprites.front_default,
     }
     crearCarta(propiedadesPokemon);
 }
@@ -84,23 +88,24 @@ async function buscarPokemon(event){
     try {
         
         lienzoLimpio();
-        let nombrePokemon = document.getElementById('inputPokemon').value.toLowerCase();
+        let nombrePokemon = document.getElementById('inputPokemon').value.trim().toLowerCase();
         let respuestaApi = await fetch(`${baseUrl}pokemon/${nombrePokemon}`);
         let pokemon = await respuestaApi.json();
 
 
         let propiedadesPokemon = {
-            name: pokemon.name,
-            height: pokemon.height,
-            id: pokemon.id,
-            weight: pokemon.weight,
+            name:  pokemon.name,
+            height:  pokemon.height,
+            id:  pokemon.id,
+            weight:  pokemon.weight,
             image: pokemon.sprites.front_default
         };
         crearCarta(propiedadesPokemon);
-        regresar();
+        
 
     } catch (error) {
-        console.error(error);
+        let errorBusqueda = document.getElementById('errorInput');
+        errorBusqueda.textContent = `No está escrito correctamente, por favor vuelva a intentar`;
     }
 }
 
