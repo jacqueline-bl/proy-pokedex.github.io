@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header{
+    background-color: rgb(226, 143, 243);
+    border-radius: 20px;
+    margin:25px;
+    padding: 25px;
+
+    text-align: center;
+}
+
+h1{
+    color: purple;
+    font-size: 45px;
+    letter-spacing: 4.5px;
+}
+
+form, input, button{
+    padding: 15px;
+    border: none;
+}
+
+button{
+    background-color:rgb(236, 213, 109);
+    font-size: 25px;    
+}
+
+input{
+    font-size: 25px;
+    text-align: center;
+}
+
+body{
+    background-color: #5eb182;
+    width: 100vw;
+    height: auto;
+  
+   /* display: flex;
+    justify-content: center;
+    align-items: center;*/
+}
+
+main {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+
+#render{
+    background-color: #5eb182;
+    width: 90%;
+    height: auto;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.carta{
+    background: white;
+    border-radius: 16px;
+    width: 180px;
+    height: 280px;
+    padding: 15px;
+    margin: 5px;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+ul {
+    list-style: none;
+}
+
+h3{
+    font-size: 22px;
+    padding: 20px;
+    letter-spacing: 2.5px;
+    color: mediumblue;
+}
+
+h3::first-letter {
+    text-transform: uppercase;
+}
+
+img{
+    width: 90%;
+    height: 80%;
+}
+
+#regresar{
+    background-color: #5eb182;
+    width: 90%;
+    height: auto;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+@media (max-width:450px ){
+
+    input{
+        width: 85%;
+    }
+
+}
